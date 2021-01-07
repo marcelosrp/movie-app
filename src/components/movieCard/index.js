@@ -2,9 +2,9 @@ import React, { useContext } from "react";
 import { GlobalContext } from "../../GlobalContext";
 import PropTypes from "prop-types";
 
-import * as S from "./styles";
+import { IMG_PATH } from "../../services/api";
 
-const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
+import * as S from "./styles";
 
 const MovieCard = ({
   moviePoster,

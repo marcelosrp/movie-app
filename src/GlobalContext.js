@@ -1,8 +1,8 @@
 import React, { createContext, useState, useEffect } from "react";
 
-export const GlobalContext = createContext();
+import { API_URL } from "./services/api";
 
-const API_URL = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${process.env.REACT_APP_API_KEY}&page=1`;
+export const GlobalContext = createContext();
 
 export const GlobalStorage = ({ children }) => {
   const [movieList, setMovieList] = useState([]);
