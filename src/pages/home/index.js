@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { GlobalContext } from "../../GlobalContext";
 
 import Layout from "../../components/Layout";
-import MovieCard from "../../components/MovieCard";
+import MovieCard from "../../components/MovieList";
 import ModalOverview from "../../components/Modal/Overview";
 
 import * as S from "./styles";
