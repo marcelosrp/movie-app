@@ -22,10 +22,12 @@ export const MovieCard = styled.div`
   background-color: #373b69;
   border-radius: 3px;
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+  flex: 1 1 auto;
   margin: 10px;
+  max-width: 310px;
   position: relative;
   overflow: hidden;
-  width: 310px;
+  width: 290px;
 
   &::before {
     background-color: rgba(0, 0, 0, 0.5);

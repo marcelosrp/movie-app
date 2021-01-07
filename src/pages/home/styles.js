@@ -5,6 +5,9 @@ export const MovieContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  max-width: 1000px;
   width: 100%;
+
+  @media (min-width: 1250px) and (max-width: 1800px) {
+    justify-content: center;
+  }
 `;
