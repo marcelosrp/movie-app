@@ -12,20 +12,20 @@ export const MovieButtonOverview = styled.button`
   opacity: 0;
   padding: 8px 20px;
   position: absolute;
+  pointer-events: none;
   top: 50%;
   transform: translate(-50%, -50%);
   transition: opacity 0.3s ease;
-  z-index: 2;
 `;
 
 export const MovieCard = styled.div`
   background-color: #373b69;
   border-radius: 3px;
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
-  margin: 1rem;
+  margin: 10px;
   position: relative;
   overflow: hidden;
-  width: 300px;
+  width: 310px;
 
   &::before {
     background-color: rgba(0, 0, 0, 0.5);
@@ -49,6 +49,7 @@ export const MovieCard = styled.div`
 
   &:hover ${MovieButtonOverview} {
     opacity: 1;
+    pointer-events: initial;
   }
 `;
 

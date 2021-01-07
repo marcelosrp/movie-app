@@ -7,6 +7,7 @@ const API_URL = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.
 export const GlobalStorage = ({ children }) => {
   const [movieList, setMovieList] = useState([]);
   const [modalIsOpen, setIsOpen] = useState(false);
+  const [modalOverview, setModalOverview] = useState({});
 
   async function getMovies() {
     try {
@@ -20,8 +21,9 @@ export const GlobalStorage = ({ children }) => {
     } catch (error) {}
   }
 
-  function openModal() {
+  function openModal(movieTitle, movieOverview) {
     setIsOpen(true);
+    setModalOverview({ title: movieTitle, overview: movieOverview });
   }
 
   function closeModal() {
@@ -34,7 +36,7 @@ export const GlobalStorage = ({ children }) => {
 
   return (
     <GlobalContext.Provider
-      value={{ movieList, modalIsOpen, openModal, closeModal }}
+      value={{ movieList, modalIsOpen, openModal, closeModal, modalOverview }}
     >
       {children}
     </GlobalContext.Provider>
