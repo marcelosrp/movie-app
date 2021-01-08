@@ -74,9 +74,20 @@ export const MovieTitle = styled.h2`
 `;
 
 export const MovieAverage = styled.span`
-  background-color: #22254b;
   color: #fff;
   padding: 0.25rem 0.5rem;
   border-radius: 3px;
   font-weight: bold;
+
+  &.green {
+    background-color: green;
+  }
+
+  &.orange {
+    background-color: orange;
+  }
+
+  &.red {
+    background-color: red;
+  }
 `;

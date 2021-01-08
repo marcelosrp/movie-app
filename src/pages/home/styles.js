@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const MovieContainer = styled.div`
+export const MovieContainer = styled.section`
   align-items: center;
   display: flex;
   flex-wrap: wrap;

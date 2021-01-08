@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { GlobalContext } from "../../GlobalContext";
 import PropTypes from "prop-types";
 
+import { calcAverage } from "../../helpers/helpers";
+
 import { IMG_PATH } from "../../services/api";
 
 import * as S from "./styles";
@@ -19,7 +21,9 @@ const MovieCard = ({
       <S.MoviePoster src={IMG_PATH + moviePoster} />
       <S.MovieInfo>
         <S.MovieTitle>{movieTitle}</S.MovieTitle>
-        <S.MovieAverage>{movieAverage}</S.MovieAverage>
+        <S.MovieAverage className={calcAverage(movieAverage)}>
+          {movieAverage}
+        </S.MovieAverage>
       </S.MovieInfo>
       <S.MovieButtonOverview
         onClick={() => openModal(movieTitle, movieOverview)}
