@@ -1,6 +1,5 @@
-import React, { useContext } from "react";
-import { GlobalContext } from "../../GlobalContext";
-import PropTypes from "prop-types";
+import React from "react";
+import { Link } from "react-router-dom";
 
 import SearchInput from "../SearchInput";
 import SearchButton from "../SearchButton";
@@ -12,6 +11,9 @@ const SearchBar = () => {
     <S.SearchBarContainer>
       <SearchInput />
       <SearchButton />
+      <Link to="/" className="btn-home">
+        Home
+      </Link>
     </S.SearchBarContainer>
   );
 };
