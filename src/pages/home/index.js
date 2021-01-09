@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Redirect } from "react-router-dom";
 import { GlobalContext } from "../../GlobalContext";
 
 import Layout from "../../components/Layout";
@@ -10,7 +11,24 @@ import SearchBar from "../../components/SearchBar";
 import * as S from "./styles";
 
 const Home = () => {
-  const { isLoading, movieList, modalIsOpen } = useContext(GlobalContext);
+  const {
+    isLoading,
+    movieList,
+    modalIsOpen,
+    hasSearchKeyword,
+    searchKeyWord,
+  } = useContext(GlobalContext);
+
+  if (hasSearchKeyword) {
+    return (
+      <Redirect
+        to={{
+          pathname: "/resultado-busca",
+          state: { search: searchKeyWord },
+        }}
+      />
+    );
+  }
 
   return (
     <Layout>

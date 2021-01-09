@@ -1,5 +1,4 @@
 import React, { createContext, useState, useEffect } from "react";
-
 import { API_URL } from "./services/api";
 
 export const GlobalContext = createContext();
@@ -9,6 +8,8 @@ export const GlobalStorage = ({ children }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [modalOverview, setModalOverview] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+  const [searchKeyWord, setSearchKeyWord] = useState("");
+  const [hasSearchKeyword, setHasSearchKeyword] = useState(false);
 
   async function getMovies() {
     setIsLoading(true);
@@ -33,6 +34,14 @@ export const GlobalStorage = ({ children }) => {
     setIsOpen(false);
   }
 
+  function handleChangeSearch({ target }) {
+    setSearchKeyWord(target.value);
+  }
+
+  function handleClickSearch() {
+    if (searchKeyWord) setHasSearchKeyword(true);
+  }
+
   useEffect(() => {
     getMovies();
   }, []);
@@ -46,6 +55,10 @@ export const GlobalStorage = ({ children }) => {
         openModal,
         closeModal,
         modalOverview,
+        handleChangeSearch,
+        searchKeyWord,
+        handleClickSearch,
+        hasSearchKeyword,
       }}
     >
       {children}

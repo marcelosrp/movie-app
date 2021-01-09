@@ -7,11 +7,16 @@ import { MdSearch } from "react-icons/md";
 import * as S from "./styles";
 
 const SearchButton = () => {
+  const { handleClickSearch } = useContext(GlobalContext);
   return (
-    <S.SearchButton>
+    <S.SearchButton onClick={handleClickSearch}>
       <MdSearch />
     </S.SearchButton>
   );
+};
+
+SearchButton.propTypes = {
+  handleClickSearch: PropTypes.func,
 };
 
 export default SearchButton;

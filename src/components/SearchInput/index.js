@@ -5,7 +5,21 @@ import PropTypes from "prop-types";
 import * as S from "./styles";
 
 const SearchInput = () => {
-  return <S.SearchInput name="search" type="text" placeholder="Search..." />;
+  const { handleChangeSearch, searchKeyWord } = useContext(GlobalContext);
+  return (
+    <S.SearchInput
+      onChange={handleChangeSearch}
+      value={searchKeyWord}
+      name="search"
+      type="text"
+      placeholder="Search..."
+    />
+  );
+};
+
+SearchInput.propTypes = {
+  handleChangeSearch: PropTypes.func,
+  searchKeyWord: PropTypes.string,
 };
 
 export default SearchInput;
