@@ -5,18 +5,13 @@ import { GlobalContext } from "../../GlobalContext";
 import Layout from "../../components/Layout";
 import Skeleton from "../../components/Skeleton";
 import MovieCard from "../../components/MovieList";
-import ModalOverview from "../../components/Modal/Overview";
 
 import * as S from "./styles";
 
 const Home = () => {
-  const {
-    isLoading,
-    movieList,
-    modalIsOpen,
-    hasSearchKeyword,
-    searchKeyWord,
-  } = useContext(GlobalContext);
+  const { isLoading, movieList, hasSearchKeyword, searchKeyWord } = useContext(
+    GlobalContext
+  );
 
   if (hasSearchKeyword) {
     return (
@@ -50,8 +45,6 @@ const Home = () => {
           })
         )}
       </S.MovieContainer>
-
-      {modalIsOpen && <ModalOverview modalIsOpen={modalIsOpen} />}
     </Layout>
   );
 };

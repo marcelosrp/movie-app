@@ -5,15 +5,12 @@ import { GlobalContext } from "../../GlobalContext";
 import Layout from "../../components/Layout";
 import Skeleton from "../../components/Skeleton";
 import MovieCard from "../../components/MovieList";
-import ModalOverview from "../../components/Modal/Overview";
 
 import * as S from "./styles";
 
 const ResultadoBusca = (props) => {
   const { search } = props.location.state || {};
-  const { isLoading, researchedMovieList, modalIsOpen } = useContext(
-    GlobalContext
-  );
+  const { isLoading, researchedMovieList } = useContext(GlobalContext);
 
   if (search === undefined) {
     return <Redirect to="/" />;
@@ -39,7 +36,6 @@ const ResultadoBusca = (props) => {
           })
         )}
       </S.MovieContainer>
-      {modalIsOpen && <ModalOverview modalIsOpen={modalIsOpen} />}
     </Layout>
   );
 };
