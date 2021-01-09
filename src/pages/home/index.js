@@ -5,6 +5,7 @@ import { GlobalContext } from "../../GlobalContext";
 import Layout from "../../components/Layout";
 import Skeleton from "../../components/Skeleton";
 import MovieCard from "../../components/MovieList";
+import Pagination from "../../components/Pagination";
 
 import * as S from "./styles";
 
@@ -45,6 +46,7 @@ const Home = () => {
           })
         )}
       </S.MovieContainer>
+      <Pagination />
     </Layout>
   );
 };
