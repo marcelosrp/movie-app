@@ -53,6 +53,11 @@ export const MovieCard = styled.div`
     opacity: 1;
     pointer-events: initial;
   }
+
+  @media (max-width: 600px) {
+    max-width: 100%;
+    width: 100%;
+  }
 `;
 
 export const MoviePoster = styled.img`
