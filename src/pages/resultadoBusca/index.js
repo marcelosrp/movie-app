@@ -6,7 +6,6 @@ import Layout from "../../components/Layout";
 import Skeleton from "../../components/Skeleton";
 import MovieCard from "../../components/MovieList";
 import ModalOverview from "../../components/Modal/Overview";
-import SearchBar from "../../components/SearchBar";
 
 import * as S from "./styles";
 
@@ -22,8 +21,6 @@ const ResultadoBusca = (props) => {
 
   return (
     <Layout>
-      <SearchBar />
-
       <S.MovieContainer>
         {isLoading ? (
           <Skeleton />
