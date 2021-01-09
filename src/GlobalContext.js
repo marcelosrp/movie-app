@@ -23,7 +23,6 @@ export const GlobalStorage = ({ children }) => {
 
       if (response.status === 200) {
         const data = await response.json(response);
-        console.log(data);
         setMovieList(data.results);
         setTotalPages(data.total_pages);
         setIsLoading(false);
@@ -105,19 +104,19 @@ export const GlobalStorage = ({ children }) => {
         isLoading,
         movieList,
         modalIsOpen,
-        handleOpenModal,
-        handleCloseModal,
         modalOverview,
-        handleChangeSearch,
         searchKeyWord,
-        handleClickSearch,
         hasSearchKeyword,
         researchedMovieList,
+        currentPage,
+        totalPages,
+        handleChangeSearch,
+        handleOpenModal,
+        handleCloseModal,
+        handleClickSearch,
         getPrevPage,
         getNextPage,
         setPage,
-        currentPage,
-        totalPages,
         GoToLastPage,
         GoToFirstPage,
       }}
