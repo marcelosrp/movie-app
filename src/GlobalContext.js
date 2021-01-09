@@ -43,6 +43,7 @@ export const GlobalStorage = ({ children }) => {
     if (searchKeyWord) {
       setHasSearchKeyword(true);
       getMoviesBySearch(searchKeyWord);
+      localStorage.setItem("term", searchKeyWord);
     }
   }
 
@@ -62,6 +63,8 @@ export const GlobalStorage = ({ children }) => {
   }
 
   useEffect(() => {
+    const localTermSearch = localStorage.getItem("term");
+    if (localTermSearch) getMoviesBySearch(localTermSearch);
     getMovies();
   }, []);
 
