@@ -11,3 +11,13 @@ export const MovieContainer = styled.section`
     justify-content: center;
   }
 `;
+
+export const PageTitle = styled.h1`
+  color: #fff;
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin: 30px 0 10px 0;
+  text-align: center;
+  width: 100%;
+`;

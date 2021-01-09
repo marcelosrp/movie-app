@@ -73,7 +73,7 @@ export const MovieInfo = styled.div`
 
 export const MovieTitle = styled.h2`
   color: #fff;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
   white-space: break-spaces;
 `;

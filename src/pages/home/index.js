@@ -5,6 +5,7 @@ import Layout from "../../components/Layout";
 import Skeleton from "../../components/Skeleton";
 import MovieCard from "../../components/MovieList";
 import ModalOverview from "../../components/Modal/Overview";
+import SearchBar from "../../components/SearchBar";
 
 import * as S from "./styles";
 
@@ -13,7 +14,10 @@ const Home = () => {
 
   return (
     <Layout>
+      <SearchBar />
+
       <S.MovieContainer>
+        <S.PageTitle>Popular Movies</S.PageTitle>
         {isLoading ? (
           <Skeleton />
         ) : (
