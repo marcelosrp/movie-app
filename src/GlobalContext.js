@@ -8,8 +8,10 @@ export const GlobalStorage = ({ children }) => {
   const [movieList, setMovieList] = useState([]);
   const [modalIsOpen, setIsOpen] = useState(false);
   const [modalOverview, setModalOverview] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
 
   async function getMovies() {
+    setIsLoading(true);
     try {
       const response = await fetch(API_URL);
       if (!response.ok) throw new Error("Deu ruim!");
@@ -17,6 +19,7 @@ export const GlobalStorage = ({ children }) => {
       if (response.status === 200) {
         const data = await response.json(response);
         setMovieList(data.results);
+        setIsLoading(false);
       }
     } catch (error) {}
   }
@@ -36,7 +39,14 @@ export const GlobalStorage = ({ children }) => {
 
   return (
     <GlobalContext.Provider
-      value={{ movieList, modalIsOpen, openModal, closeModal, modalOverview }}
+      value={{
+        isLoading,
+        movieList,
+        modalIsOpen,
+        openModal,
+        closeModal,
+        modalOverview,
+      }}
     >
       {children}
     </GlobalContext.Provider>
