@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const SearchBarContainer = styled.section`
   align-items: center;
-  background-color: #373b69;
+  background-color: var(--secondary-color);
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const SkeletonWrapper = styled.div`
-  background-color: #fff;
+  background-color: var(--white);
   border-radius: 3px;
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
   flex: 1 1 auto;

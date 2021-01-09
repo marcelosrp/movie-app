@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const SearchButton = styled.button`
   align-items: center;
   background-color: transparent;
-  border: 2px solid #22254b;
+  border: 2px solid var(--primary-color);
   border-radius: 6px;
   color: #fff;
   cursor: pointer;
@@ -16,7 +16,7 @@ export const SearchButton = styled.button`
   width: 40px;
 
   &:hover {
-    background-color: #22254b;
+    background-color: var(--primary-color);
     outline: none;
   }
 `;

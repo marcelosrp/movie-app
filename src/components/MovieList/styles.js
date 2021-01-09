@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const MovieButtonOverview = styled.button`
-  background-color: #373b69;
+  background-color: var(--secondary-color);
   border: none;
   color: #fff;
   cursor: pointer;
@@ -19,7 +19,7 @@ export const MovieButtonOverview = styled.button`
 `;
 
 export const MovieCard = styled.div`
-  background-color: #373b69;
+  background-color: var(--secondary-color);
   border-radius: 3px;
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
   flex: 1 1 auto;
@@ -80,7 +80,7 @@ export const MovieInfo = styled.div`
 `;
 
 export const MovieTitle = styled.h2`
-  color: #fff;
+  color: var(--white);
   display: -webkit-box;
   font-size: 18px;
   font-weight: 400;
@@ -97,14 +97,14 @@ export const MovieAverage = styled.span`
   font-weight: bold;
 
   &.green {
-    background-color: green;
+    background-color: var(--green);
   }
 
   &.orange {
-    background-color: orange;
+    background-color: var(--orange);
   }
 
   &.red {
-    background-color: red;
+    background-color: var(--red);
   }
 `;

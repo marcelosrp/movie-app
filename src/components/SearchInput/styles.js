@@ -2,20 +2,20 @@ import styled from "styled-components";
 
 export const SearchInput = styled.input`
   background-color: transparent;
-  border: 2px solid #22254b;
+  border: 2px solid var(--primary-color);
   border-radius: 6px;
-  color: #fff;
+  color: var(--white);
   font-size: 1rem;
   font-family: inherit;
   padding: 0.5rem 1rem;
   transition: all 0.3s ease;
 
   &:focus {
-    background-color: #22254b;
+    background-color: var(--primary-color);
     outline: none;
   }
 
   ::placeholder {
-    color: #fff;
+    color: var(--white);
   }
 `;

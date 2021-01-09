@@ -9,7 +9,7 @@ import styled from "styled-components";
 const ButtonClose = styled.button`
   background-color: transparent;
   border: none;
-  color: #22254b;
+  color: var(--primary-color);
   cursor: pointer;
   font-size: 24px;
   font-weight: 400;
@@ -19,7 +19,7 @@ const ButtonClose = styled.button`
 `;
 
 const Title = styled.h1`
-  color: #22254b;
+  color: var(--primary-color);
   font-size: 22px;
   line-height: 24px;
   letter-spacing: 2px;
@@ -27,7 +27,7 @@ const Title = styled.h1`
 `;
 
 const Text = styled.p`
-  color: #22254b;
+  color: var(--primary-color);
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 2px;
