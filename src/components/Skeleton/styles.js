@@ -29,6 +29,11 @@ export const SkeletonWrapper = styled.div`
     animation: load 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   }
 
+  @media (max-width: 600px) {
+    max-width: 100%;
+    width: 100%;
+  }
+
   @keyframes load {
     from {
       left: -150px;

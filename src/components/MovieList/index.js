@@ -18,9 +18,11 @@ const MovieCard = ({
 
   return (
     <S.MovieCard>
-      <S.MoviePoster
-        src={moviePoster !== null ? IMG_PATH + moviePoster : DEFAULT_IMG}
-      />
+      <S.MoviePosterWrapper>
+        <S.MoviePoster
+          src={moviePoster !== null ? IMG_PATH + moviePoster : DEFAULT_IMG}
+        />
+      </S.MoviePosterWrapper>
       <S.MovieInfo>
         <S.MovieTitle>{movieTitle}</S.MovieTitle>
         <S.MovieAverage className={calcAverage(movieAverage)}>

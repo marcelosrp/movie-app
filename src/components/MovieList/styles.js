@@ -60,7 +60,15 @@ export const MovieCard = styled.div`
   }
 `;
 
+export const MoviePosterWrapper = styled.div`
+  height: 465px;
+  overflow: hidden;
+  width: 100%;
+`;
+
 export const MoviePoster = styled.img`
+  height: 100%;
+  object-fit: fill;
   width: 100%;
 `;
 
@@ -68,14 +76,18 @@ export const MovieInfo = styled.div`
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 10px 15px;
 `;
 
 export const MovieTitle = styled.h2`
   color: #fff;
+  display: -webkit-box;
   font-size: 18px;
   font-weight: 400;
-  white-space: break-spaces;
+  overflow: hidden;
+  padding-right: 20px;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 `;
 
 export const MovieAverage = styled.span`
