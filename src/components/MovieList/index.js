@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 import { calcAverage } from "../../helpers/helpers";
 
-import { IMG_PATH } from "../../services/api";
+import { IMG_PATH, DEFAULT_IMG } from "../../services/api";
 
 import * as S from "./styles";
 
@@ -18,7 +18,9 @@ const MovieCard = ({
 
   return (
     <S.MovieCard>
-      <S.MoviePoster src={IMG_PATH + moviePoster} />
+      <S.MoviePoster
+        src={moviePoster !== null ? IMG_PATH + moviePoster : DEFAULT_IMG}
+      />
       <S.MovieInfo>
         <S.MovieTitle>{movieTitle}</S.MovieTitle>
         <S.MovieAverage className={calcAverage(movieAverage)}>
@@ -35,7 +37,7 @@ const MovieCard = ({
 };
 
 MovieCard.propTypes = {
-  moviePoster: PropTypes.string.isRequired,
+  moviePoster: PropTypes.string,
   movieTitle: PropTypes.string.isRequired,
   movieAverage: PropTypes.number.isRequired,
 };
