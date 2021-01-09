@@ -25,12 +25,12 @@ export const GlobalStorage = ({ children }) => {
     } catch (error) {}
   }
 
-  function openModal(movieTitle, movieOverview) {
+  function handleOpenModal(movieTitle, movieOverview) {
     setIsOpen(true);
     setModalOverview({ title: movieTitle, overview: movieOverview });
   }
 
-  function closeModal() {
+  function handleCloseModal() {
     setIsOpen(false);
   }
 
@@ -52,8 +52,8 @@ export const GlobalStorage = ({ children }) => {
         isLoading,
         movieList,
         modalIsOpen,
-        openModal,
-        closeModal,
+        handleOpenModal,
+        handleCloseModal,
         modalOverview,
         handleChangeSearch,
         searchKeyWord,

@@ -55,14 +55,14 @@ const customStyles = {
 Modal.setAppElement("#root");
 
 const ModalOverview = ({ modalIsOpen }) => {
-  const { closeModal, modalOverview } = useContext(GlobalContext);
+  const { handleCloseModal, modalOverview } = useContext(GlobalContext);
   return (
     <Modal
       isOpen={modalIsOpen}
       style={customStyles}
       contentLabel="Modal movie description"
     >
-      <ButtonClose onClick={closeModal} title="Fechar modal">
+      <ButtonClose onClick={handleCloseModal} title="Fechar modal">
         <MdClose />
       </ButtonClose>
       <Title>{modalOverview.title}</Title>

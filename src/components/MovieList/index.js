@@ -14,7 +14,7 @@ const MovieCard = ({
   movieAverage,
   movieOverview,
 }) => {
-  const { openModal } = useContext(GlobalContext);
+  const { handleOpenModal } = useContext(GlobalContext);
 
   return (
     <S.MovieCard>
@@ -26,7 +26,7 @@ const MovieCard = ({
         </S.MovieAverage>
       </S.MovieInfo>
       <S.MovieButtonOverview
-        onClick={() => openModal(movieTitle, movieOverview)}
+        onClick={() => handleOpenModal(movieTitle, movieOverview)}
       >
         Overview
       </S.MovieButtonOverview>
