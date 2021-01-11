@@ -9,7 +9,11 @@ import * as S from "./styles";
 const SearchButton = () => {
   const { handleClickSearch } = useContext(GlobalContext);
   return (
-    <S.SearchButton onClick={handleClickSearch}>
+    <S.SearchButton
+      onClick={handleClickSearch}
+      aria-label="search movie button"
+      type="button"
+    >
       <MdSearch />
     </S.SearchButton>
   );

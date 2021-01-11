@@ -21,6 +21,9 @@ const MovieCard = ({
       <S.MoviePosterWrapper>
         <S.MoviePoster
           src={moviePoster !== null ? IMG_PATH + moviePoster : DEFAULT_IMG}
+          alt={movieTitle}
+          width="100%"
+          height="100%"
         />
       </S.MoviePosterWrapper>
       <S.MovieInfo>

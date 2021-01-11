@@ -60,7 +60,7 @@ export const MovieCard = styled.div`
   }
 `;
 
-export const MoviePosterWrapper = styled.div`
+export const MoviePosterWrapper = styled.figure`
   height: 465px;
   overflow: hidden;
   width: 100%;
