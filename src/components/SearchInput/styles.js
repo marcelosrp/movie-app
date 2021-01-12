@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const SearchInput = styled.input`
   background-color: transparent;
-  border: 2px solid var(--primary-color);
+  border: ${(props) =>
+    props.error ? "2px solid var(--red)" : "2px solid var(--primary-color)"};
   border-radius: 6px;
   color: var(--white);
   font-size: 1rem;

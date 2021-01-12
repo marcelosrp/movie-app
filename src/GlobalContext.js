@@ -5,15 +5,19 @@ export const GlobalContext = createContext();
 
 export const GlobalStorage = ({ children }) => {
   const [movieList, setMovieList] = useState([]);
-  const [modalIsOpen, setIsOpen] = useState(false);
-  const [modalOverview, setModalOverview] = useState({});
-  const [isLoading, setIsLoading] = useState(false);
   const [searchKeyWord, setSearchKeyWord] = useState("");
   const [hasSearchKeyword, setHasSearchKeyword] = useState(false);
   const [researchedMovieList, setResearchedMovieList] = useState([]);
 
+  const [isLoading, setIsLoading] = useState(false);
+
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [modalOverview, setModalOverview] = useState({});
+
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(null);
+
+  const [inputError, setInputError] = useState(false);
 
   const getMovies = useCallback(async () => {
     try {
@@ -45,9 +49,12 @@ export const GlobalStorage = ({ children }) => {
 
   function handleClickSearch() {
     if (searchKeyWord) {
+      setInputError(false);
       setHasSearchKeyword(true);
       getMoviesBySearch(searchKeyWord);
-      localStorage.setItem("term", searchKeyWord);
+      sessionStorage.setItem("term", searchKeyWord);
+    } else {
+      setInputError(true);
     }
   }
 
@@ -89,13 +96,15 @@ export const GlobalStorage = ({ children }) => {
   }
 
   useEffect(() => {
-    const localTermSearch = localStorage.getItem("term");
-    if (localTermSearch) getMoviesBySearch(localTermSearch);
+    const sessionTermSearch = sessionStorage.getItem("term");
+    if (sessionTermSearch) getMoviesBySearch(sessionTermSearch);
+
     window.scrollTo({
       top: 0,
       left: 0,
       behavior: "smooth",
     });
+
     getMovies();
   }, [getMovies]);
 
@@ -111,6 +120,7 @@ export const GlobalStorage = ({ children }) => {
         researchedMovieList,
         currentPage,
         totalPages,
+        inputError,
         handleChangeSearch,
         handleOpenModal,
         handleCloseModal,

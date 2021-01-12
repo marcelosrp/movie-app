@@ -5,7 +5,9 @@ import PropTypes from "prop-types";
 import * as S from "./styles";
 
 const SearchInput = () => {
-  const { handleChangeSearch, searchKeyWord } = useContext(GlobalContext);
+  const { handleChangeSearch, searchKeyWord, inputError } = useContext(
+    GlobalContext
+  );
   return (
     <S.SearchInput
       onChange={handleChangeSearch}
@@ -13,6 +15,7 @@ const SearchInput = () => {
       name="search"
       type="text"
       placeholder="Search..."
+      {...(inputError && { error: true })}
     />
   );
 };

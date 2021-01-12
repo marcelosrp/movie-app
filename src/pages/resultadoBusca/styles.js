@@ -4,7 +4,7 @@ export const MovieContainer = styled.section`
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  height: calc(100vh - 75px);
+  min-height: calc(100vh - 75px);
   margin: 0 auto;
   width: 100%;
 
