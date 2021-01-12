@@ -27,6 +27,12 @@ export const PaginationButton = styled.button`
   padding: 5px 10px;
   transition: all 0.3s ease;
 
+  @media (max-width: 600px) {
+    display: ${(props) => props.hiddenMobile && "none"};
+    letter-spacing: 1px;
+    padding: 5px;
+  }
+
   &:hover:not(:disabled) {
     background-color: var(--secondary-color);
   }

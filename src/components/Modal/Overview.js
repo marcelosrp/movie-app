@@ -62,7 +62,11 @@ const ModalOverview = ({ modalIsOpen }) => {
       style={customStyles}
       contentLabel="Modal movie description"
     >
-      <ButtonClose onClick={handleCloseModal} title="Fechar modal">
+      <ButtonClose
+        onClick={handleCloseModal}
+        title="Fechar modal"
+        aria-label="Close modal button"
+      >
         <MdClose />
       </ButtonClose>
       <Title>{modalOverview.title}</Title>

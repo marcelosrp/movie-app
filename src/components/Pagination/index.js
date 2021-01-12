@@ -49,6 +49,7 @@ const Pagination = () => {
         title="Prev page"
         onClick={getPrevPage}
         disabled={currentPage === 1 && true}
+        hiddenMobile={true}
       >
         <MdChevronLeft />
       </S.PaginationButton>
@@ -58,6 +59,7 @@ const Pagination = () => {
         title="Next page"
         onClick={getNextPage}
         disabled={currentPage === totalPages && true}
+        hiddenMobile={true}
       >
         <MdChevronRight />
       </S.PaginationButton>
