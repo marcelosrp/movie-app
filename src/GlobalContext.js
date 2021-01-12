@@ -55,6 +55,7 @@ export const GlobalStorage = ({ children }) => {
     try {
       setIsLoading(true);
       const response = await fetch(SEARCH_API + movie);
+
       if (!response.ok) throw new Error("Deu ruim!");
 
       if (response.status === 200) {

@@ -4,6 +4,7 @@ export const MovieContainer = styled.section`
   align-items: center;
   display: flex;
   flex-wrap: wrap;
+  height: calc(100vh - 75px);
   margin: 0 auto;
   width: 100%;
 
@@ -13,7 +14,7 @@ export const MovieContainer = styled.section`
 `;
 
 export const PageTitle = styled.h1`
-  color: #fff;
+  color: var(--white);
   font-size: 30px;
   font-weight: 400;
   letter-spacing: 2px;

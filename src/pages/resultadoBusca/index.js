@@ -19,6 +19,10 @@ const ResultadoBusca = (props) => {
   return (
     <Layout>
       <S.MovieContainer>
+        {researchedMovieList.length === 0 && (
+          <S.PageTitle>Movie not found</S.PageTitle>
+        )}
+
         {isLoading ? (
           <Skeleton />
         ) : (
